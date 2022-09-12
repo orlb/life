@@ -8,11 +8,11 @@ void prtscr(int screen[128][128]);
 
 int main() {
 	
-	int speed = 5;
+	int speed = 1;
 	
 	int screen[128][128];
-	int origin[2] = {5, 5};
-	int live[][2] = {
+	int origin[2] = {35, 0};
+	int live[][2] = {	// glider gun
 		{5, 1},
 		{5, 2},
 		{6, 1},
@@ -51,7 +51,7 @@ int main() {
 		{4, 36}
 	};
 
-	for (int y = 0; y < SIZE; y++) {
+	for (int y = 0; y < SIZE; y++) { 	// screen init
 		for (int x = 0; x < SIZE; x++) {
 			screen[y][x] = 0;
 		}
@@ -59,12 +59,14 @@ int main() {
 
 	for (int i = 0; i < (sizeof(live) / sizeof(live[0])); i++) {
 		screen[live[i][0] + origin[0]][live[i][1] + origin[1]] = 1;
+		//upside down
+		screen[origin[0] - live[i][0]][(origin[1] - live[i][1]) + SIZE] = 1;
 	}
 
 
 	int living = 1;
 
-	while(live > 0) {
+	while(living > 0) {
 
 		int buffer[128][128] = {};
 		living = 0;
