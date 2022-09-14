@@ -12,8 +12,14 @@ int main() {
 	
 	int screen[128][128];
 	int origin[2] = {35, 0};
-	int live[][2] = {	// glider gun
-		{5, 1},
+	int live[][2] = {	
+        
+        {10, 10},
+        {11, 11},
+        {11, 12},
+        {11, 13},
+        {10, 14}
+/*		{5, 1},     // glider gun
 		{5, 2},
 		{6, 1},
 		{6, 2},
@@ -49,6 +55,7 @@ int main() {
 		{4, 35},
 		{3, 36},
 		{4, 36}
+*/
 	};
 
 	for (int y = 0; y < SIZE; y++) { 	// screen init
