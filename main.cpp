@@ -82,7 +82,7 @@ int main() {
 		memcpy(buffer, screen, sizeof(screen));
 		buffer[pos[0]][pos[1]] = 2;
 		prtscr(buffer);
-		printf("WASD SPACE, x to start");
+		printf("WASD SPACE, x to start\n");
 		
 		scanf("%c", &move);
 
